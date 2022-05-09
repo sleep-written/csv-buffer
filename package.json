@@ -5,18 +5,18 @@
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
   "files": [
-      "./dist"
+    "./dist"
   ],
   "exports": {
-      ".": {
-          "require": "./dist/cjs/index.js",
-          "import": "./dist/esm/index.js"
-      }
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    }
   },
   "scripts": {
     "test": "ava",
     "start": "ts-node-esm ./src/index.ts",
-    "clean": "tsc --build --clean ./tsconfig.build.json",
+    "clean": "tsc --build --clean ./tsconfig.build.json && ./prepare.sh",
     "build": "npm run clean && tsc --build ./tsconfig.build.json",
     "watch": "npm run clean && tsc --build --watch ./tsconfig.build.json"
   },
